@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 
   def new
     @count = Book.count
-    @book = Book.new(position: @count + 1, title: 'N/A')
+    @book = Book.new(position: @count + 1)
   end
 
   def create
@@ -56,7 +56,10 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(
       :title,
-      :position
+      :position,
+      :author,
+      :price,
+      :published_date
       )
   end
 end
