@@ -1,0 +1,26 @@
+
+<%= link_to('Back to List', books_path, :class => 'back-link') %> <br />
+
+<div class ="books new">
+    <h2> Create Book </h2>
+
+    <%= form_with(model: @book, local: true) do |f| %>
+        <% #url: tasks_path, method: 'post' %>
+
+        <table summary="Book form fields">
+            <tr>
+                <th> Title </th>
+                <td><%= f.text_field(:title) %></td>
+            </tr>
+            <tr>
+                <th> Position </th>
+                <td><%= f.text_field(:position)%></td>
+            </tr>
+
+        </table>
+
+        <div class="form-buttons">
+            <%= f.submit("Create Book")%>
+        </div>
+    <% end %>
+</div>
