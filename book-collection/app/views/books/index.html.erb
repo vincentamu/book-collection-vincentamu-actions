@@ -1,0 +1,33 @@
+<h1>Books List</h1>
+
+<div class = "books index">
+    <h2> Books </h2>
+
+    <body>
+        <% if flash[:notice] %>
+            <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+    </body>
+
+    <%= link_to("Add Books", new_book_path, class: 'action new') %>
+
+    <table class="listing" summary="Book List" style="width: 100%">
+        <tr class = "header">
+            <th>#</th>
+            <th>Title</th>
+        </tr>
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.position %>
+            <td><%= book.title %>
+
+            <td class="actions">
+                <%= link_to("Show", book_path(book), class: 'action show') %>
+                <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>
+                <%= link_to("Delete", delete_book_path(book), class: 'action delete') %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+
+</div>
