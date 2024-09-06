@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "books#index"
 
   resources :books do
@@ -8,11 +7,11 @@ Rails.application.routes.draw do
     end
   end
 
-#  get "books/new"
-#  get "books/edit"
-#  get "books/show"
-#  get "books/delete"
-  
+  #  get "books/new"
+  #  get "books/edit"
+  #  get "books/show"
+  #  get "books/delete"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,11 +1,10 @@
 class BooksController < ApplicationController
-
   def index
-    @books = Book.order(:title);
+    @books = Book.order(:title)
   end
 
   def show
-    @book = Book.find(params[:id]);
+    @book = Book.find(params[:id])
   end
 
   def new
@@ -19,10 +18,10 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully added!"
       redirect_to books_path
     else
-      #new action is not call here
-      #assign  any instance variables needed
-      #@count = Task.count
-      render('new')
+      # new action is not call here
+      # assign  any instance variables needed
+      # @count = Task.count
+      render("new")
     end
   end
 
@@ -34,9 +33,9 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = "Book was successfully edited!"
-      redirect_to books_path 
+      redirect_to books_path
     else
-      render('edit')
+      render("edit")
     end
   end
 

@@ -7,7 +7,7 @@ RSpec.describe 'Managing books', type: :feature do
     fill_in 'book[title]', with: 'Harry Potter'
     fill_in 'book[author]', with: 'J.K. Rowling'
     fill_in 'book[price]', with: '19.99'
-    
+
     # Selecting the date using select
     select '1997', from: 'book_published_date_1i' # Year
     select 'June', from: 'book_published_date_2i' # Month
@@ -26,10 +26,9 @@ RSpec.describe 'Managing books', type: :feature do
     select '1997', from: 'book_published_date_1i'
     select 'June', from: 'book_published_date_2i'
     select '26', from: 'book_published_date_3i'
-  
+
     click_on 'Create Book'
-  
+
     expect(page).to have_content("")
   end
-  
 end
